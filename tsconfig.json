@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ES2018",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "esModuleInterop": true,
+    "outDir": "build",
+    "types": [],
+    "sourceMap": true,
+    "rootDir": "src",
+    "declaration": true
+  },
+  "exclude": ["**/node_modules/**"]
+}
