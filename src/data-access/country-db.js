@@ -1,3 +1,5 @@
+const COUNTRIES_COLLECTION = 'countries'
+
 export default function makeCountryDb({ makeDb }) {
   return Object.freeze({
     getCount,
@@ -7,12 +9,14 @@ export default function makeCountryDb({ makeDb }) {
 
   async function getCount() {
     const db = await makeDb()
-    return await db.collection('countries').countDocuments()
+    return await db.collection(COUNTRIES_COLLECTION).countDocuments()
   }
 
   async function insertMany(countries) {
     const db = await makeDb()
-    const result = await db.collection('countries').insertMany(countries)
+    const result = await db
+      .collection(COUNTRIES_COLLECTION)
+      .insertMany(countries)
     return (await result.ops).map(({ _id: id, ...created }) => ({
       id,
       ...created,
@@ -21,7 +25,7 @@ export default function makeCountryDb({ makeDb }) {
 
   async function removeAll() {
     const db = await makeDb()
-    const result = await db.collection('countries').deleteMany()
+    const result = await db.collection(COUNTRIES_COLLECTION).deleteMany()
     return result.deletedCount
   }
 }

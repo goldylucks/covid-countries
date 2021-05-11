@@ -8,6 +8,7 @@ services:
     volumes:
       - .:/home/node/code
       - /home/node/code/node_modules
+      - $HOME/.aws/credentials-covid:/home/node/.aws/credentials:ro
     links:
       - db
     environment:

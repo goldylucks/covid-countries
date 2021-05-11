@@ -3,7 +3,7 @@ export default function makeGetCountriesCountCtrl({ getCountriesCount }) {
     try {
       return await tryGetCountriesCountCtrl({ getCountriesCount })
     } catch (error) {
-      return errorGetCountriesCountCtrl({ error })
+      return catchGetCountriesCountCtrl({ error })
     }
   }
 }
@@ -19,7 +19,7 @@ export async function tryGetCountriesCountCtrl({ getCountriesCount }) {
   }
 }
 
-export function errorGetCountriesCountCtrl({ error }) {
+export function catchGetCountriesCountCtrl({ error }) {
   // TODO: Error logging
   console.log(error)
 

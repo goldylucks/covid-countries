@@ -8,11 +8,15 @@
   "scripts": {
     "seed": "curl -X POST http://localhost:3000/api/countries/seed",
     "count": "curl http://localhost:3000/api/countries/count",
+    "post-count-to-s3": "curl -X POST http://localhost:3000/api/countries/post-count-to-s3",
+    "lint": "eslint src",
     "dev": "docker-compose up --build"
   },
   "dependencies": {
+    "aws-sdk": "^2.904.0",
     "axios": "^0.21.1",
     "cuid": "^2.1.6",
+    "export-to-csv": "^0.2.1",
     "express": "^4.17.1",
     "mongodb": "^3.6.6"
   },

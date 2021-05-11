@@ -3,15 +3,16 @@ module.exports = {
     'eslint:recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
-    'plugin:@typescript-eslint/recommended',
+    // 'plugin:@typescript-eslint/recommended',
   ],
   plugins: [
     'import',
-    /*'@typescript-eslint' yarn returns an error when trying to install this*/
+    // '@typescript-eslint',
   ],
   rules: {
+    // '@typescript-eslint/no-unused-vars': 0,
     'prefer-const': 2,
-
+    'require-await': 2,
     'no-unused-vars': [
       'error',
       { vars: 'all', args: 'after-used', ignoreRestSiblings: true },
@@ -31,7 +32,8 @@ module.exports = {
       },
     ],
   },
-  parser: '@typescript-eslint/parser',
+  // parser: '@typescript-eslint/parser',
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 12,
   },

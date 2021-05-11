@@ -3,7 +3,7 @@ export default function makeSeedDbCtrl({ seedCountries }) {
     try {
       return await trySeedCountriesCtrl({ seedCountries })
     } catch (error) {
-      return errorSeedCountriesCtrl({ error })
+      return catchSeedCountriesCtrl({ error })
     }
   }
 }
@@ -19,7 +19,7 @@ export async function trySeedCountriesCtrl({ seedCountries }) {
   }
 }
 
-export function errorSeedCountriesCtrl({ error }) {
+export function catchSeedCountriesCtrl({ error }) {
   // TODO: Error logging
   console.log(error)
 

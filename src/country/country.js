@@ -1,4 +1,4 @@
-// here the biz logic of our country object will be defined
+// here the biz logic of our country entity will be defined
 // ATM we don't have any
 
 export default function buildMakeCountry() {
